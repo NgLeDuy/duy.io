@@ -1,0 +1,101 @@
+
+<div class="container" > 
+    <div class="card shadow mb-4 ">
+        <div class="card-header py-3">
+            <ul class="nav nav-tabs nav-fill" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" href="#profile" role="tab" data-toggle="tab" aria-selected="true">Hồ sơ tuyển dụng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#spmb" role="tab" data-toggle="tab" aria-selected="false">Hồ sơ mua sản phẩm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#references" role="tab" data-toggle="tab" aria-selected="false">Hồ sơ bán sản phẩm</a>
+            </li>
+            </ul>
+        </div>
+<!-- Tab panes -->
+        <div class="card-body">
+            <div role="tabpanel" class="tab-pane fade in active" id="profile">
+                <table class="table table-bordered table-hover" id="mytable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Cấp quản lý</th>
+                    </thead>
+                    <tbody>
+                    {{#each results}}
+                        <tr>
+                            <td>{{UserID}}</td>
+                            <td>{{ HoTen }}</td>
+                            <td>{{ Email }}</td>
+                            <td>{{ Sdt }}</td>
+                            <td>{{ Categories }}<td>
+                            
+                        </tr>
+                    </a>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            {{!-- Ho so mua dat --}}
+            <div role="tabpanel" class="tab-pane fade in active" id="spmb">
+                <table class="table table-bordered table-hover" id="mytable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Diện tích</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Giá gốc</th>
+                        <th>Giá bán ra</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each rows}}
+                        <tr>
+                            <td>{{MaSP}}</td>
+                            <td>{{ TenSP }}</td>
+                            <td>{{ chieudai }} X {{chieurong}}</td>
+                            <td>{{ Giagoc }}</td>
+                            <td>{{ Giaban }}<td>
+                            
+                        </tr>
+                    </a>
+                        {{/each}}
+                    </tbody>
+                </table>   
+            </div>
+                <div role="tabpanel" class="tab-pane fade" id="references">
+                    <table class="table table-bordered table-hover" id="mytable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Mã sản phẩm</th>
+                        <th>Diện tích</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Giá bán ra</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each rows}}
+                        <tr>
+                            <td>{{MaSP}}</td>
+                            <td>{{ TenSP }}</td>
+                            <td>{{ chieudai }} X {{chieurong}}</td>
+                            <td>{{ GiaBan }}</td>
+                        </tr>
+                    </a>
+                        {{/each}}
+                    </tbody>
+                </table>   
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</div> 
+

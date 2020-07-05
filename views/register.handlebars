@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Đăng ký thành viên</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+<div class="col">
+          <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">ĐĂNG KÝ THÀNH VIÊN</h1>
+              </div>
+ 
+  <form class="user" action="/dangky" method="POST">
+ 
+   
+               <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+
+                    <input type="text" class="form-control " id="exampleFirstName" placeholder="Số điện thoại/Gmail quản lý" name="usernamequanly" required="required">
+
+                  </div>
+                  <div class="col-sm-6">
+
+                    <select class="form-control" name="capqly" id="capql" required >
+                    	<option value="" >Cấp quản lý</option>
+     					        <option value="A1">A1</option>
+     					        <option value="A2">A2</option>
+     					        <option value="A3">A3</option>
+
+                 	</select>
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-8 mb-3 mb-sm-0">
+
+
+                    <input type="text" class="form-control " id="exampleFirstName" name="usernameungvien" placeholder="Số điện thoại/ Gmail ứng viên" required=''> 
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="password" class="form-control " id="exampleLastName" placeholder="Password" name="password" required=''>
+                  </div>
+
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-8 mb-3 mb-sm-0">
+                    <input type="text" class="form-control " id="exampleFirstName" placeholder="Họ và tên" name="hoten" required=''>
+                  </div>
+                  <div class="col-sm-4">
+                    {{!-- <input type="date" class="form-control " id="exampleLastName" placeholder="Ngày sinh" name="ngaysinh" required=''> --}}
+                   <input name="date"  placeholder="Ngày sinh" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required='required'>
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input placeholder="Ngày sinh" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required='required'>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control " id="exampleLastName" placeholder="Nơi Sinh" name="noisinh" required=''>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input type="tel" class="form-control " id="exampleFirstName" placeholder="Số điện thoại" name="sdt" required=''>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control " id="exampleLastName" placeholder="Địa chỉ email" name="email" required=''>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control " id="exampleInputEmail" placeholder="Địa chỉ liên hệ" name="diachi" required=''>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input type="number" class="form-control " id="exampleFirstName" placeholder="Tài khoản ngân hàng" name="taikhoan" required=''>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control " id="exampleLastName" placeholder="Thuộc chi nhánh" name="chinhanh" required=''>
+                  </div>
+                   
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control " id="exampleInputEmail" placeholder="Thông tin người thân" name="ttnt" required=''>
+                </div>
+                
+                <hr>
+
+
+                <button  class="btn btn-primary btn-user btn-block" type="submit" >
+                  Đăng ký tài khoản
+                </button>
+                
+
+                
+               
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<div class="container" >  
+    <!-- DataTales Example -->
+        
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách thành viên</h6>
+        </div>
+        <div class="card-body">
+           <a href="/admin/dangky" class="btn btn-primary btn-sm" style="margin-bottom: 1em;">Thêm thành viên</a>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="mytable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Số điện thoại</th>
+                            <th>Password</th>
+                            <th>Địa chỉ</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#each results}}
+                        <tr>
+                            <td>{{UserID}}</td>
+                            <td>{{ HoTen }}</td>
+                            <td>{{ Email }}</td>
+                            <td>{{ Sdt }}</td>
+                            <td>{{ Password }}</td>
+                            <td>{{ DiaChi }}<td>
+                            <a href="javascript:void(0);" class="btn btn-sm btn-info edit" data-id="{{ UserID }}" data-hoten="{{ HoTen }}" data-email="{{ Email }}" data-userungvien="{{userNV}}" data-sdt="{{Sdt}}"
+                                data-pass="{{Password}}" data-ngaysinh="{{NgaySinh}}" data-noisinh="{{NoiSinh}}" data-capql="{{Categories}}" data-diachi="{{DiaChi}}" data-userql="{{userQL}}" data-tknh="{{TKNH}}" data-chinhanh="{{ChinhanhTKNH}}" data-toggle="modal" data-target="#modalEdit"> Edit</a>
+                            <a href="javascript:void(0);"   type="button" class="btn btn-sm btn-danger delete" data-toggle="modal" data-target="#myModal" data-id="{{ UserID }}">Xóa</a>
+                            
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+      
+   
+</div>      
+<!-- The Modal Delete -->
+<form action="/admin/nhanvienhanchinh/delete" method="POST">
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Thông báo</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Bạn có chắc muốn xóa nó không?
+      </div>
+
+      <!-- Modal footer -->
+    <input type="hidden" name="id" class="form-control product_id2" required>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" >OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+</form> 
+
+{{!-- the modal edit --}}
+<form action="admin/nhanvienhanchinh/update" method="post">
+        <div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Thay đổi thông tin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+
+                    <input type="text" class="form-control userql1" id="exampleFirstName" placeholder="Số điện thoại/Gmail quản lý" name="usernamequanly" required>
+
+                  </div>
+                  <div class="col-sm-6">
+
+                    <select class="form-control capql1" name="capqly" id="capql" required >
+                    	<option value="" >Cấp quản lý</option>
+     					        <option value="A1">A1</option>
+     					        <option value="A2">A2</option>
+     					        <option value="A3">A3</option>
+
+                 	</select>
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-8 mb-3 mb-sm-0">
+
+
+                    <input type="text" class="form-control userungvien1" id="exampleFirstName" name="usernameungvien" placeholder="Số điện thoại/ Gmail ứng viên" required> 
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control pass1" id="exampleLastName" placeholder="Password" name="password" required=''>
+                  </div>
+
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-8 mb-3 mb-sm-0">
+                    <input type="text" class="form-control hoten1" id="exampleFirstName" placeholder="Họ và tên" name="hoten" required=''>
+                  </div>
+                  <div class="col-sm-4">
+                   <input name="date"  placeholder="Ngày sinh" class="form-control ngaysinh1" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required='required'>
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input placeholder="Ngày sinh" class="form-control ngaysinh1" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  required='required'>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control noisinh1 " id="exampleLastName" placeholder="Nơi Sinh" name="noisinh" required=''>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input type="tel" class="form-control sdt1" id="exampleFirstName" placeholder="Số điện thoại" name="sdt" required=''>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control email1" id="exampleLastName" placeholder="Địa chỉ email" name="email" required=''>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control diachi1" id="exampleInputEmail" placeholder="Địa chỉ liên hệ" name="diachi" required=''>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-4 mb-3 mb-sm-0">
+                    <input type="number" class="form-control taikhoan1" id="exampleFirstName" placeholder="Tài khoản ngân hàng" name="taikhoan" required=''>
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control chinhanh1" id="exampleLastName" placeholder="Thuộc chi nhánh" name="chinhanh" required=''>
+                  </div>
+                   
+                </div>
+                <input type="hidden" name="id" class="form-control userid1" required>
+                <div class="form-group">
+                  <input type="text" class="form-control ttnt1" id="exampleInputEmail" placeholder="Thông tin người thân" name="ttnt" required=''>
+                </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ </form>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+    $(document).ready(function(){
+        $('#mytable').on('click','.delete' ,function(){
+             var id = $(this).data('id');
+            $('.product_id2').val(id);
+        });
+        $('#mytable').on('click','.edit', function(){
+          var id = $(this).data('id');
+          var userql = $(this).data('userql')
+          var capql1 = $(this).data('capql')
+          var userNV1 = $(this).data('userungvien')
+          var pass = $(this).data('pass')
+          var hoten = $(this).data('hoten')
+          var ns = new Date($(this).data('ngaysinh'))
+          var ngaysinh1 = ns.toISOString().substring(0,10);
+          var noisinh= $(this).data('noisinh')
+          var sdt = $(this).data('sdt')
+          var email = $(this).data('email')
+          var diachi = $(this).data('diachi')
+          var taikhoan = $(this).data('tknh')
+          var chinhanh = $(this).data('chinhanh')
+          
+
+        $('.userid1').val(id);
+        $('.userql1').val(userql);
+        $('.capql1').val(capql1);
+        $('.userungvien1').val(userNV1);
+        $('.pass1').val(pass);
+        $('.hoten1').val(hoten);
+        $('.ngaysinh1').val(ngaysinh1);
+        $('.noisinh1').val(noisinh);
+        $('.sdt1').val(sdt);
+        $('.email1').val(email);
+        $('.diachi1').val(diachi);
+        $('.chinhanh1').val(chinhanh);
+        $('.taikhoan1').val(taikhoan);
+ 
+        })
+    });
+ </script>
+ 

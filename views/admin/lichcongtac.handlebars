@@ -1,0 +1,99 @@
+<div class="content">   
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tạo lịch công tác</h6>
+        </div class="col-12 col-md-12 col-lg-12">
+        <div class="card-body">
+        <form class="form-inline" action="lich_cong_tac"  method="POST">
+            <div class="form-group">
+                     <input class="form-control" type="week" name="lich" id="example-week-input" required>
+                     <button class="btn btn-primary" style="margin: 1em;" type="submit" >Save</button>
+                </div>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>TT</th>
+                            <th>Họ và Tên</th>
+                            <th>Thứ 2</th>
+                            <th>Thứ 3</th>
+                            <th>Thứ 4</th>
+                            <th>Thứ 5</th>
+                            <th>Thứ 6</th>
+                            <th>Thứ 7</th>
+                            <th>Chủ Nhật</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        {{#each row }}
+                        <tr>
+                            
+                        <th>{{UserID}}</th>
+                        
+                        <th>{{HoTen}}</th>
+                        <th>
+                            <input type="checkbox" name="thu2" value="{{UserID}}" style="width: 20px;height: 20px;"/>                         
+                        </th>
+                        <th><input type="checkbox" name="thu3" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        <th><input type="checkbox" name="thu4" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        <th><input type="checkbox" name="thu5" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        <th><input type="checkbox" name="thu6" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        <th><input type="checkbox" name="thu7" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        <th><input type="checkbox" name="cn" value="{{UserID}}" style="width: 20px;height: 20px;"/></th>
+                        </tr>
+                        {{/each}}
+                    </tfoot>
+                </table>
+            </div>
+        </form>
+        </div>         
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lịch Công tác</h6>
+        </div class="col-12 col-md-12 col-lg-12">
+        <div class="card-body">
+        <form action="lich_cong_tac" class="form-inline" method="GET">
+           
+           <div class="form-group" >
+                     <input class="form-control" type="week" name="lich" id="example-week-input">
+                     <button class="btn btn-primary  form-control" style="margin: 1em;" type="submit">search</button>
+                </div>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Thứ 2</th>
+                            <th>Thứ 3</th>
+                            <th>Thứ 4</th>
+                            <th>Thứ 5</th>
+                            <th>Thứ 6</th>
+                            <th>Thứ 7</th>
+                            <th>Chủ Nhật</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        {{#each result }}
+                             <tr>
+                            
+                        <th>{{HoTen}}</th>
+                        <th>{{this.HoTen1}}</th>
+                        <th>{{this.HoTen2}}</th>
+                        <th>{{this.HoTen3}}</th>
+                        <th>{{this.HoTen4}}</th>
+                        <th>{{this.HoTen5}}</th>
+                        <th>{{this.HoTen6}}</th>
+                          
+
+                            
+                             </tr>
+                        {{/each}}
+                        
+                    </tfoot>
+                </table>
+            </div>
+        </form>
+        </div>         
+    </div>
+</div>
