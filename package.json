@@ -16,7 +16,7 @@
     "express-mysql-session": "^2.1.4",
     "express-session": "^1.17.1",
     "express3-handlebars": "^0.5.2",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "handlebars-group-by": "^1.0.1",
     "monode": "^3.0.1",
     "mysql": "^2.18.1",
